@@ -2,6 +2,9 @@ import { StrictMode, useEffect, useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import './styles.css'
 
+const GITHUB_URL = 'https://github.com/deekshareddy719-ship-it'
+const LINKEDIN_URL = 'https://www.linkedin.com/in/n-deeksha-511620384'
+
 const skills = [
   { name: 'Python', icon: 'Py', level: 'Core skill' },
   { name: 'C Programming', icon: 'C', level: 'Core skill' },
@@ -102,7 +105,9 @@ function App() {
           onClick={closeMenu}
           aria-label="N. Deeksha home"
         >
-          <span className="brand-mark">N<span>.</span></span>
+          <span className="brand-mark">
+            N<span>.</span>
+          </span>
           <span className="brand-name">N. Deeksha</span>
         </a>
 
@@ -140,9 +145,29 @@ function App() {
           ))}
         </nav>
 
-        <a className="header-cta" href="#contact">
-          Let's talk <ArrowIcon />
-        </a>
+        <div className="header-right">
+          <a
+            className="social-link"
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </a>
+
+          <a
+            className="social-link"
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+
+          <a className="header-cta" href="#contact">
+            Let's talk <ArrowIcon />
+          </a>
+        </div>
       </header>
 
       <main>
@@ -151,7 +176,8 @@ function App() {
 
           <div className="hero-content reveal">
             <p className="eyebrow">
-              <span className="status-dot" /> Available for opportunities
+              <span className="status-dot" />
+              Available for opportunities
             </p>
 
             <h1>
@@ -161,12 +187,15 @@ function App() {
             </h1>
 
             <p className="hero-intro">Hi, I'm N. Deeksha</p>
+
             <p className="hero-copy">
               Passionate about Programming, AI &amp; Data Science
             </p>
 
             <div className="hero-education">
-              <span>B.Tech – Artificial Intelligence &amp; Data Science</span>
+              <span>
+                B.Tech – Artificial Intelligence &amp; Data Science
+              </span>
               <span>Reva University, Bangalore</span>
             </div>
 
@@ -174,8 +203,27 @@ function App() {
               <a className="button button-primary" href="#projects">
                 View my projects <ArrowIcon />
               </a>
+
               <a className="button button-quiet" href="#contact">
                 Contact me <ArrowIcon />
+              </a>
+            </div>
+
+            <div className="hero-socials">
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub <ArrowIcon />
+              </a>
+
+              <a
+                href={LINKEDIN_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn <ArrowIcon />
               </a>
             </div>
           </div>
@@ -183,10 +231,12 @@ function App() {
           <div className="hero-orbit" aria-hidden="true">
             <div className="orbit-ring ring-one" />
             <div className="orbit-ring ring-two" />
+
             <div className="orbit-core">
               <span>AI</span>
               <small>01</small>
             </div>
+
             <span className="orbit-label label-one">logic</span>
             <span className="orbit-label label-two">create</span>
             <span className="orbit-label label-three">learn</span>
@@ -194,7 +244,9 @@ function App() {
 
           <div className="hero-footer">
             <span>01 / 06</span>
-            <span>Scroll to explore <b>↓</b></span>
+            <span>
+              Scroll to explore <b>↓</b>
+            </span>
           </div>
         </section>
 
@@ -222,6 +274,7 @@ function App() {
 
               <div className="education-line">
                 <span className="line-icon">✦</span>
+
                 <div>
                   <strong>
                     B.Tech – Artificial Intelligence &amp; Data Science
@@ -245,6 +298,7 @@ function App() {
               <br />
               <span>to keep growing.</span>
             </h2>
+
             <p>
               Technical foundations paired with the human skills that make
               good work possible.
@@ -259,10 +313,12 @@ function App() {
                 key={skill.name}
               >
                 <span className="skill-icon">{skill.icon}</span>
+
                 <div>
                   <h3>{skill.name}</h3>
                   <span>{skill.level}</span>
                 </div>
+
                 <ArrowIcon />
               </div>
             ))}
@@ -281,6 +337,7 @@ function App() {
               <br />
               <span>real things.</span>
             </h2>
+
             <p>
               Projects where code meets curiosity, hardware, and a desire to
               understand how things work.
@@ -299,7 +356,9 @@ function App() {
                 aria-label={`Open ${project.title} GitHub repository in a new tab`}
               >
                 <div className={`project-visual ${project.visual}`}>
-                  <span className="project-number">{project.number}</span>
+                  <span className="project-number">
+                    {project.number}
+                  </span>
 
                   {project.visual === 'editor-visual' ? (
                     <>
@@ -308,12 +367,14 @@ function App() {
                         <i />
                         <i />
                       </div>
+
                       <div className="canvas-lines">
                         <b />
                         <b />
                         <b />
                         <b />
                       </div>
+
                       <div className="cursor-shape">+</div>
                     </>
                   ) : (
@@ -322,6 +383,7 @@ function App() {
                         <i />
                         <i />
                       </div>
+
                       <div className="signal signal-a">⌁</div>
                       <div className="signal signal-b">⌁</div>
                     </>
@@ -329,8 +391,12 @@ function App() {
                 </div>
 
                 <div className="project-body">
-                  <span className="project-type">{project.type}</span>
+                  <span className="project-type">
+                    {project.type}
+                  </span>
+
                   <h3>{project.title}</h3>
+
                   <p>{project.description}</p>
 
                   <div className="project-meta">
@@ -343,7 +409,10 @@ function App() {
           </div>
         </section>
 
-        <section className="certifications section-pad" id="certifications">
+        <section
+          className="certifications section-pad"
+          id="certifications"
+        >
           <div className="section-label reveal">
             <span>04</span>
             <span>Learning milestones</span>
@@ -355,6 +424,7 @@ function App() {
               <br />
               <span>discovery mode.</span>
             </h2>
+
             <p>
               Every certification is a marker of momentum and a new perspective
               to carry forward.
@@ -369,13 +439,16 @@ function App() {
                 key={cert.title}
               >
                 <span className="cert-mark">{cert.mark}</span>
+
                 <div>
                   <span className="cert-label">
                     CERTIFICATION / 0{index + 1}
                   </span>
+
                   <h3>{cert.title}</h3>
                   <p>{cert.issuer}</p>
                 </div>
+
                 <span className="cert-arrow">↗</span>
               </div>
             ))}
@@ -389,6 +462,7 @@ function App() {
                 <span>05</span>
                 <span>Direction</span>
               </span>
+
               <h2>
                 Where I'm
                 <br />
@@ -398,11 +472,13 @@ function App() {
 
             <div className="career-copy">
               <span className="quote-mark">“</span>
+
               <p>
                 My goal is to build a successful career in Artificial
                 Intelligence and Data Science, learn new technologies, and
                 develop innovative solutions for real-world problems.
               </p>
+
               <span className="signature">
                 N. Deeksha <i>— ambition in motion</i>
               </span>
@@ -441,7 +517,7 @@ function App() {
                 </a>
 
                 <a
-                  href="https://github.com/deekshareddy719-ship-it"
+                  href={GITHUB_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -450,7 +526,7 @@ function App() {
                 </a>
 
                 <a
-                  href="https://www.linkedin.com/in/n-deeksha-511620384"
+                  href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -460,7 +536,10 @@ function App() {
               </div>
             </div>
 
-            <form className="contact-form reveal" onSubmit={submitForm}>
+            <form
+              className="contact-form reveal"
+              onSubmit={submitForm}
+            >
               <label>
                 Name
                 <input
@@ -491,7 +570,10 @@ function App() {
                 />
               </label>
 
-              <button className="button button-primary" type="submit">
+              <button
+                className="button button-primary"
+                type="submit"
+              >
                 Send message <ArrowIcon />
               </button>
 
@@ -507,13 +589,36 @@ function App() {
 
       <footer className="site-footer">
         <a className="brand" href="#home">
-          <span className="brand-mark">N<span>.</span></span>
+          <span className="brand-mark">
+            N<span>.</span>
+          </span>
+
           <span className="brand-name">N. Deeksha</span>
         </a>
 
         <div>
-          <span>B.Tech – Artificial Intelligence &amp; Data Science</span>
+          <span>
+            B.Tech – Artificial Intelligence &amp; Data Science
+          </span>
           <span>Reva University, Bangalore</span>
+        </div>
+
+        <div className="footer-socials">
+          <a
+            href={GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </a>
+
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
         </div>
 
         <span>© 2026 N. Deeksha. All Rights Reserved.</span>
